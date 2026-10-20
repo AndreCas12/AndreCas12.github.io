@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduSkill Academy | Cursos 100% Virtuales 24/7</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN SUPERIOR -->
+    <header>
+        <div class="logo">
+            <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Birrete Académico / Escudo Digital -->
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M5 8.5V15.5C5 17.5 8 19 12 19C16 19 19 17.5 19 15.5V8.5" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M22 7V14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <circle cx="12" cy="12" r="2" fill="currentColor" />
+            </svg>
+            <span>EduSkill <span class="logo-accent">Academy</span></span>
+        </div>
+        <nav>
+            <a href="#cursos">Cursos 24/7</a>
+            <a href="#certificador">Certificador IA</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="campus.html" class="btn-campus">Campus Virtual</a>
+            <button id="themeToggle" class="btn-theme">🌙</button>
+        </nav>
+    </header>
+
+    <!-- SECCIÓN PRINCIPAL / HERO -->
+    <section class="hero" id="inicio">
+        <h1>Aprende habilidades digitales a tu propio ritmo 24/7</h1>
+        <p>Capacitación 100% virtual con emisión de certificados verificados mediante Inteligencia Artificial al
+            instante.</p>
+        <div class="hero-buttons">
+            <a href="#cursos" class="btn-primary">Ver Catálogo de Cursos</a>
+            <a href="#certificador" class="btn-secondary">Probar Certificador IA</a>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <!-- APARTADO 1: CURSOS 24/7 -->
+        <section id="cursos" class="page-section">
+            <h2 class="section-title">🎓 Catálogo de Cursos 24/7</h2>
+            <p class="section-subtitle">Acceso asincrónico e ilimitado desde cualquier dispositivo. Estudia a tu propio
+                ritmo.</p>
+
+            <div class="grid-courses">
+                <div class="card">
+                    <div class="card-badge">100% Virtual • 24/7</div>
+                    <h3>Ensamble de PC y Hardware</h3>
+                    <p>Aprende arquitectura de computadores, componentes, diagnóstico de fallas y mantenimiento
+                        preventivo.</p>
+                    <ul class="card-features">
+                        <li>⏱️ Duración: 40 horas</li>
+                        <li>📜 Incluye Certificación IA</li>
+                        <li>♾️ Acceso de por vida</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="price">$49.000 COP</span>
+                        <button class="btn-enroll"
+                            onclick="seleccionarCurso('Ensamble de PC y Mantenimiento de Hardware')">Inscribirme</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-badge">100% Virtual • 24/7</div>
+                    <h3>Marketing Digital y Redes</h3>
+                    <p>Estrategias de pauta publicitaria en Meta Ads, posicionamiento de marca y embudos de ventas.</p>
+                    <ul class="card-features">
+                        <li>⏱️ Duración: 35 horas</li>
+                        <li>📜 Incluye Certificación IA</li>
+                        <li>♾️ Acceso de por vida</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="price">$49.000 COP</span>
+                        <button class="btn-enroll"
+                            onclick="seleccionarCurso('Marketing Digital y Redes Sociales')">Inscribirme</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-badge">100% Virtual • 24/7</div>
+                    <h3>Seguridad y Salud en el Trabajo</h3>
+                    <p>Fundamentos del SG-SST, prevención de riesgos laborales y normatividad legal vigente.</p>
+                    <ul class="card-features">
+                        <li>⏱️ Duración: 50 horas</li>
+                        <li>📜 Incluye Certificación IA</li>
+                        <li>♾️ Acceso de por vida</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="price">$49.000 COP</span>
+                        <button class="btn-enroll"
+                            onclick="seleccionarCurso('Seguridad y Salud en el Trabajo (SG-SST)')">Inscribirme</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider" />
+
+        <!-- APARTADO 2: CERTIFICADOR INTELIGENTE (IA) -->
+        <section id="certificador" class="page-section">
+            <h2 class="section-title">✨ Certificación Validada por IA</h2>
+            <p class="section-subtitle">Garantizamos la autenticidad de tus competencias laborales mediante análisis de
+                desempeño en tiempo real.</p>
+
+            <div class="ai-generator" style="text-align: center;">
+                <div class="card-badge" style="margin: 0 auto 1rem auto;">Seguridad & Autenticidad</div>
+                <h3>Certificados Inteligentes Infalsificables</h3>
+                <p style="max-width: 650px; margin: 1rem auto; color: var(--color-text-muted);">
+                    Cada vez que finalizas un curso dentro de nuestro <strong>Campus Virtual 24/7</strong>, nuestro
+                    motor analítico genera un informe de desempeño único con sello de verificación y código QR
+                    encriptado.
+                </p>
+                <a href="campus.html" class="btn-ai"
+                    style="display: inline-block; width: auto; padding: 0.8rem 2rem; text-decoration: none;">
+                    🚀 Ir al Campus Virtual para Certificarme
+                </a>
+            </div>
+        </section>
+
+        <hr class="divider" />
+
+        <!-- APARTADO 3: NOSOTROS (QUIÉNES SOMOS, MISIÓN, VISIÓN Y EQUIPO) -->
+        <section id="nosotros" class="page-section">
+            <h2 class="section-title">🏢 Sobre EduSkill Academy</h2>
+            <p class="section-subtitle">Transformamos la educación técnica y digital en Latinoamérica con disponibilidad
+                total 24/7.</p>
+
+            <!-- QUIÉNES SOMOS -->
+            <div class="about-card" style="margin-bottom: 2rem;">
+                <h3>👥 ¿Quiénes Somos?</h3>
+                <p>
+                    <strong>EduSkill Academy S.A.S.</strong> es una plataforma educativa EdTech enfocada en el
+                    desarrollo de competencias laborales y habilidades digitales para estudiantes, trabajadores e
+                    independientes. Nuestro modelo de aprendizaje 100% virtual y asincrónico elimina las barreras de
+                    tiempo y espacio, permitiendo a nuestros estudiantes capacitarse a su propio ritmo con
+                    certificaciones inmediatas validadas mediante Inteligencia Artificial.
+                </p>
+            </div>
+
+            <!-- MISIÓN Y VISIÓN -->
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>🎯 Misión</h3>
+                    <p>
+                        Ofrecer educación técnica y digital accesible 100% virtual con disponibilidad 24/7, permitiendo
+                        a nuestros estudiantes adquirir competencias laborales a su propio ritmo mediante contenidos
+                        prácticos, interactivos y continuamente actualizados.
+                    </p>
+                </div>
+
+                <div class="about-card">
+                    <h3>🚀 Visión</h3>
+                    <p>
+                        Para el año 2029, consolidarnos como la plataforma e-learning de cursos cortos 100% virtuales
+                        líder en la región, reconocida por la flexibilidad de su modelo 24/7, la innovación en la
+                        validación de certificados por IA y la aplicabilidad inmediata de sus contenidos.
+                    </p>
+                </div>
+            </div>
+
+            <!-- VALORES CORPORATIVOS -->
+            <div class="about-card" style="margin-top: 2rem;">
+                <h3>⭐ Nuestros Valores Corporativos</h3>
+                <div class="grid-courses" style="margin-top: 1rem;">
+                    <div
+                        style="background: var(--color-bg-dark); padding: 1rem; border-radius: 8px; border: 1px solid var(--color-border-dark);">
+                        <strong style="color: var(--color-accent-soft);">⏰ Flexibilidad Total 24/7:</strong>
+                        <p style="font-size: 0.9rem; color: var(--color-text-muted);">Sin horarios fijos ni
+                            condicionamientos geográficos.</p>
+                    </div>
+                    <div
+                        style="background: var(--color-bg-dark); padding: 1rem; border-radius: 8px; border: 1px solid var(--color-border-dark);">
+                        <strong style="color: var(--color-accent-soft);">🤖 Innovación Tecnológica:</strong>
+                        <p style="font-size: 0.9rem; color: var(--color-text-muted);">Integración de Inteligencia
+                            Artificial para la verificación y análisis de desempeño.</p>
+                    </div>
+                    <div
+                        style="background: var(--color-bg-dark); padding: 1rem; border-radius: 8px; border: 1px solid var(--color-border-dark);">
+                        <strong style="color: var(--color-accent-soft);">💡 Accesibilidad y Calidad:</strong>
+                        <p style="font-size: 0.9rem; color: var(--color-text-muted);">Cursos económicos orientados a las
+                            necesidades reales del mercado laboral.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ESTRUCTURA ORGANIZACIONAL -->
+            <div class="about-card" style="margin-top: 2rem;">
+                <h3>🏛️ Estructura Organizacional</h3>
+                <p style="margin-bottom: 1rem; color: var(--color-text-muted);">
+                    Nuestra empresa opera bajo una estructura funcional y coordinada que garantiza el funcionamiento
+                    ininterrumpido del campus virtual:
+                </p>
+                <div class="grid-courses">
+                    <div style="border-left: 3px solid var(--color-primary-medium); padding-left: 1rem;">
+                        <strong>Dirección General</strong>
+                        <p style="font-size: 0.88rem; color: var(--color-text-muted);">Planificación estratégica,
+                            gestión financiera y representación legal.</p>
+                    </div>
+                    <div style="border-left: 3px solid var(--color-primary-medium); padding-left: 1rem;">
+                        <strong>Área de Tecnología y LMS</strong>
+                        <p style="font-size: 0.88rem; color: var(--color-text-muted);">Administración de servidores en
+                            la nube y seguridad 24/7 del campus.</p>
+                    </div>
+                    <div style="border-left: 3px solid var(--color-primary-medium); padding-left: 1rem;">
+                        <strong>Área Académica y Contenidos</strong>
+                        <p style="font-size: 0.88rem; color: var(--color-text-muted);">Diseño instruccional, producción
+                            audiovisual y actualización curricular.</p>
+                    </div>
+                    <div style="border-left: 3px solid var(--color-primary-medium); padding-left: 1rem;">
+                        <strong>Marketing y Soporte 24/7</strong>
+                        <p style="font-size: 0.88rem; color: var(--color-text-muted);">Captación de estudiantes y
+                            atención de incidencias técnicas en la plataforma.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div> <!-- FIN DEL CONTENEDOR PRINCIPAL -->
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>&copy; 2026 EduSkill Academy S.A.S. - Todos los derechos reservados.</p>
+        <p>Proyecto Integrador de Administración | Cursos 100% Virtuales 24/7</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduSkill Academy | Campus Virtual 24/7</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- LIBRERÍAS PARA GENERAR PDF GRATIS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ENCABEZADO DEL CAMPUS CON LOGO SVG Y NAVEGACIÓN -->
+  <header>
+    <div class="logo">
+      <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <path d="M5 8.5V15.5C5 17.5 8 19 12 19C16 19 19 17.5 19 15.5V8.5" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M22 7V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <circle cx="12" cy="12" r="2" fill="currentColor" />
+      </svg>
+      <span>EduSkill <span class="logo-accent">Academy</span></span>
+    </div>
+    <nav>
+      <a href="index.html">← Volver al Inicio</a>
+      <button id="themeToggle" class="btn-theme">🌙</button>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <!-- VISTA 1: AUTENTICACIÓN (LOGIN Y REGISTRO) -->
+    <section id="auth-section">
+      <h2 class="section-title">Acceso al Campus Virtual</h2>
+      <p class="section-subtitle">Ingresa a tu cuenta o regístrate para comenzar tus módulos de estudio 24/7.</p>
+
+      <div class="about-grid">
+        <!-- FORMULARIO DE INICIO DE SESIÓN -->
+        <div class="about-card">
+          <h3>🔐 Iniciar Sesión</h3>
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="loginEmail">Correo Electrónico:</label>
+              <input type="email" id="loginEmail" placeholder="estudiante@eduskill.com" required />
+            </div>
+            <div class="form-group">
+              <label for="loginPass">Contraseña:</label>
+              <input type="password" id="loginPass" placeholder="••••••••" required />
+            </div>
+            <button type="submit" class="btn-primary" style="width: 100%;">Ingresar al Aula</button>
+          </form>
+
+          <div style="text-align: center; margin-top: 1rem;">
+            <a href="#" id="forgotPasswordLink"
+              style="color: var(--color-accent-soft); font-size: 0.85rem; text-decoration: underline;">
+              ¿Olvidaste tu contraseña?
+            </a>
+          </div>
+        </div>
+
+        <!-- FORMULARIO DE REGISTRO -->
+        <div class="about-card">
+          <h3>📝 Crear Cuenta Nueva</h3>
+          <form id="registerForm">
+            <div class="form-group">
+              <label for="regName">Nombre Completo:</label>
+              <input type="text" id="regName" placeholder="Ej. Karen Andrea Castañeda" required />
+            </div>
+            <div class="form-group">
+              <label for="regEmail">Correo Electrónico:</label>
+              <input type="email" id="regEmail" placeholder="correo@ejemplo.com" required />
+            </div>
+            <div class="form-group">
+              <label for="regPass">Crea una Contraseña:</label>
+              <input type="password" id="regPass" placeholder="••••••••" required />
+            </div>
+            <div class="form-group">
+              <label for="regCourse">Selecciona tu Curso Inicial:</label>
+              <select id="regCourse" required>
+                <option value="Ensamble de PC y Hardware">Ensamble de PC y Hardware</option>
+                <option value="Marketing Digital y Redes">Marketing Digital y Redes</option>
+                <option value="Seguridad y Salud en el Trabajo">Seguridad y Salud en el Trabajo</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-primary" style="width: 100%;">Registrarme e Iniciar 24/7</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISTA 2: PANEL DEL ESTUDIANTE (OCULTO HASTA INICIAR SESIÓN) -->
+    <section id="dashboard-section" style="display: none;">
+      <div class="dashboard-header">
+        <div>
+          <h2>¡Bienvenido/a, <span id="userNameDisplay">Estudiante</span>!</h2>
+          <p style="color: var(--color-text-muted);">Curso activo: <strong id="userCourseDisplay">Nombre del
+              Curso</strong></p>
+        </div>
+        <button id="btnLogout" class="btn-secondary">Cerrar Sesión</button>
+      </div>
+
+      <!-- TARJETA DE PROGRESO -->
+      <div class="course-progress-card">
+        <span class="card-badge">AULA ACTIVA 24/7</span>
+        <h3>Avance Académico</h3>
+        <p id="progressText">Progreso del curso: 0% completado</p>
+        <div class="progress-bar-bg">
+          <div id="progressBarFill" class="progress-bar-fill" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <h3 style="margin-bottom: 1rem; color: var(--color-accent-soft);">📚 Módulos del Curso</h3>
+      <div id="modulesContainer" class="module-list">
+        <!-- Se genera dinámicamente con JS -->
+      </div>
+
+      <!-- PLANTILLA DEL DIPLOMA (DESBLOQUEADA AL 100%) -->
+      <div id="certificateCanvas" style="display: none; margin-top: 3rem;">
+        <div class="badge-ia">Verificado por Motor IA - EduSkill</div>
+        <div class="cert-title">Certificado de Aprobación</div>
+        <div class="cert-subtitle">Otorgado oficialmente por EduSkill Academy S.A.S.</div>
+
+        <p style="margin-top: 1rem;">Se otorga el presente reconocimiento a:</p>
+        <div class="cert-name" id="outName">Estudiante</div>
+
+        <p>Por haber completado y aprobado satisfactoriamente con modalidad 100% virtual 24/7 el curso de:</p>
+        <div class="cert-course" id="outCourse">Curso</div>
+
+        <div class="cert-ai-box">
+          <strong>Resumen de Desempeño Generado por IA:</strong>
+          <p id="outAiSummary">Análisis de rendimiento académico...</p>
+        </div>
+
+        <div class="cert-signatures">
+          <div class="signature-col">
+            <div class="signature-line"></div>
+            <small><strong>Dirección Académica</strong><br>EduSkill Academy S.A.S.</small>
+          </div>
+          <div class="signature-col stamp-box">
+            <div class="official-stamp">SELLO DE VALIDEZ IA</div>
+          </div>
+          <div class="signature-col">
+            <div class="signature-line"></div>
+            <small><strong>Coordinación Tecnológica LMS</strong><br>Plataforma 24/7</small>
+          </div>
+        </div>
+
+        <div class="cert-footer">
+          <div class="footer-col-left">
+            <small>Código Único de Verificación:</small><br />
+            <strong id="outHash">EDUSKILL-2026-X89Z</strong>
+          </div>
+          <div class="footer-col-right">
+            <small>Fecha de Emisión:</small><br />
+            <strong id="outDate">20/10/2026</strong>
+          </div>
+        </div>
+
+        <button id="btnDownloadPDF" class="btn-primary" style="margin-top: 2rem; width: 100%;">
+          📥 Descargar Mi Certificado en PDF
+        </button>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- MODAL PARA REPRODUCIR VIDEOS DE YOUTUBE -->
+  <div id="videoModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close-btn" onclick="cerrarVideoModal()">&times;</span>
+      <h3 id="videoModalTitle">Clase en Video</h3>
+      <div class="video-container" style="margin: 1.5rem 0;">
+        <iframe id="videoIframe" width="100%" height="450" src="" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <button class="btn-primary" onclick="marcarVideoVisto()" style="width: 100%;">Marcar Módulo como Completado
+        ✅</button>
+    </div>
+  </div>
+
+  <!-- MODAL PARA CUESTIONARIO DE 5 PREGUNTAS -->
+  <div id="quizModal" class="modal" style="display: none;">
+    <div class="modal-content" style="max-width: 650px;">
+      <span class="close-btn" onclick="cerrarQuizModal()">&times;</span>
+      <h3>📝 Evaluación Final del Curso</h3>
+      <p style="color: var(--color-text-muted); margin-bottom: 1rem;">Responde las 5 preguntas correctamente para
+        calcular tu puntaje y liberar tu certificado.</p>
+
+      <form id="quizForm">
+        <div id="quizQuestionsContainer"></div>
+        <button type="submit" class="btn-ai" style="margin-top: 1.5rem; width: 100%;">Enviar Evaluación y Procesar
+          Certificado 🤖</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 EduSkill Academy S.A.S. - Todos los derechos reservados.</p>
+    <p>Campus Virtual 24/7 | Proyecto Integrador de Administración</p>
+  </footer>
+
+  <script src="js/campus.js"></script>
+</body>
+
+</html>
